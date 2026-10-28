@@ -77,6 +77,29 @@ export const projects: Project[] = [
     links: [{ label: "Voir l’application", url: "https://innofasonc.netlify.app/" }],
     featured: true,
   },
+    {
+    slug: "fraudshield",
+    title: "FraudShield",
+    category: "academique", // À ADAPTER : "solidaire" s’il s’agit d’un projet personnel
+    tag: "Détection de fraude",
+    context: "École Centrale Casablanca", // À ADAPTER, ou supprime la ligne
+    // year: "2026",
+    stack: ["Python", "Machine learning", "Data visualisation"], // À ADAPTER
+    summary:
+      "Application d’intelligence artificielle qui analyse les transactions financières pour repérer les opérations suspectes et aider à prévenir la fraude.",
+      image: "/images/projects/fraudshield.png", // retire les // une fois la capture ajoutée
+    description:
+      "FraudShield est une application de détection de fraude conçue pour le milieu financier. Elle analyse les transactions, attribue à chacune un niveau de risque et met en évidence les opérations suspectes afin de faciliter le travail des équipes de contrôle. Le projet couvre toute la chaîne, de la préparation des données à la restitution des résultats dans une interface web.",
+    highlights: [
+      "Préparation et analyse d’un jeu de données de transactions financières", // À ADAPTER
+      "Entraînement d’un modèle de détection des transactions frauduleuses", // À ADAPTER
+      "Interface web de visualisation des transactions à risque",
+      "Déploiement de l’application sur Vercel",
+    ],
+    links: [{ label: "Voir l’application", url: "https://fraud-shield-flame.vercel.app/" }],
+  },
+  
+  
   {
     slug: "peaceguard-ai",
     title: "PeaceGuard AI",
