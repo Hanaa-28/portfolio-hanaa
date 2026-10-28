@@ -1,0 +1,3 @@
+Place ton CV ici (ex. CV-Hanaa-Traore.pdf), puis renseigne son chemin dans src/data/profile.ts :
+  cvUrl: "/cv/CV-Hanaa-Traore.pdf"
+Les boutons « Télécharger mon CV » apparaîtront alors automatiquement.

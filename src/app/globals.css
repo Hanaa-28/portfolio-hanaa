@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+/*
+ * Palette du site. Changer une valeur ici la change partout.
+ * Vert, or et rouge brique : les couleurs du Burkina Faso, sur un fond clair légèrement vert.
+ */
+:root {
+  --paper: #f5f7fa;
+  --surface: #ffffff;
+  --ink: #14213d;
+  --muted: #5a6478;
+  --line: #dde2ea;
+  --primary: #2451a6;
+  --gold: #5b9bd5;
+  --brick: #1f6f8b;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0d1424;
+    --surface: #141d31;
+    --ink: #e9eef7;
+    --muted: #9aa6bd;
+    --line: #253150;
+    --primary: #7fa8ff;
+    --gold: #7cc0f0;
+    --brick: #6fc3d9;
+    color-scheme: dark;
+  }
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-primary: var(--primary);
+  --color-gold: var(--gold);
+  --color-brick: var(--brick);
+  --font-display: var(--font-bricolage);
+  --font-sans: var(--font-plex);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-plex), system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--gold);
+  color: #12231e;
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Bande tissée (motif Faso Dan Fani) : couleurs fixes, identiques en mode clair et sombre */
+/* Fond à points discrets pour les projets sans image (suit la couleur principale) */
+.cover-placeholder {
+  background-color: var(--surface);
+  background-image: radial-gradient(
+    color-mix(in srgb, var(--primary) 30%, transparent) 1.2px,
+    transparent 1.2px
+  );
+  background-size: 18px 18px;
+}
+
+/* Une seule animation d’entrée, pour l’en-tête de la page d’accueil */
+@keyframes frame {
+  from {
+    opacity: 0;
+    transform: translate(-10px, -10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.frame-in {
+  animation: frame 0.9s 0.3s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .rise,
+  .frame-in {
+    animation: none;
+  }
+}
